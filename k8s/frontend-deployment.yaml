@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: your-username/skybank-frontend:v1
+        image: smfprecise/skybank-frontend:v1
         ports:
         - containerPort: 80
 ---
