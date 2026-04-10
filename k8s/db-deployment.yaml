@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: skybank-db-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi  # Requesting 1 Gigabyte of permanent space
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skybank-db
+spec:
+  replicas: 1  # We usually keep DBs at 1 replica to avoid data conflicts
+  selector:
+    matchLabels:
+      app: skybank-db
+  template:
+    metadata:
+      labels:
+        app: skybank-db
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:15-alpine
+        env:
+        - name: POSTGRES_USER
+          value: "skyadmin"
+        - name: POSTGRES_PASSWORD
+          value: "skypassword"
+        - name: POSTGRES_DB
+          value: "skybank_db"
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - name: db-storage
+          mountPath: /var/lib/postgresql/data # This is where Postgres saves data
+      volumes:
+      - name: db-storage
+        persistentVolumeClaim:
+          claimName: skybank-db-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: skybank-db
+spec:
+  selector:
+    app: skybank-db
+  ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432

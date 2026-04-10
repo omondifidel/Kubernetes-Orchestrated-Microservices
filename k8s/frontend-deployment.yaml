@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skybank-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: skybank-frontend
+  template:
+    metadata:
+      labels:
+        app: skybank-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: your-username/skybank-frontend:v1
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: skybank-frontend
+spec:
+  type: LoadBalancer # This tells K8s to give it a public IP
+  selector:
+    app: skybank-frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
