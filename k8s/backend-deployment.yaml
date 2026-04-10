@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: your-username/skybank-backend:v1 # K8s pulls this from the registry
+        image: smfprecise/skybank-backend:v1 # K8s pulls this from the registry
         ports:
         - containerPort: 8000
         env:
