@@ -108,26 +108,26 @@ kubectl port-forward deployment/frontend 8080:80
 ---
 SCREENSHOTS
 
-Site Cant be reached
+SITE CANT BE REACHED 
 <img width="1365" height="681" alt="Site error" src="https://github.com/user-attachments/assets/8538219c-1c70-4d86-bc16-88a965230865" />
 
-Getting Pods 
+GETTING PODS  
 <img width="734" height="172" alt="pods" src="https://github.com/user-attachments/assets/2ddf792c-a854-4061-9ded-7bf7c269dfb1" />
 
-Reading Logs
+READING LOGS
 <img width="1007" height="322" alt="logs " src="https://github.com/user-attachments/assets/a3f2f316-8477-4f12-93de-4358d7c6a790" />
 
-Checking Services 
+DHECKING SERVICES
 <img width="1365" height="728" alt="inspect" src="https://github.com/user-attachments/assets/f76fc1ca-d272-43ec-a64f-3c5f5844f133" />
 
-Getting Frontend Service URL 
+GETTING FRONTEND SERVICE URL 
 <img width="1365" height="719" alt="Kuber Port Fowarding " src="https://github.com/user-attachments/assets/74be0c76-0b88-48ba-b216-9c1c6fa1518c" />
 <img width="1098" height="389" alt="Getting the frontend" src="https://github.com/user-attachments/assets/b83e8981-40ff-4761-88eb-4b3d24e42427" />
 
-Port Fowarding 
+PORT FOWARDING 
 <img width="1135" height="400" alt="forward" src="https://github.com/user-attachments/assets/46ea5798-fc69-4ec5-8be7-9cc2a2407b2f" />
 
-Homepage
+HOMEPAGE
 <img width="1365" height="721" alt="Kuber Home" src="https://github.com/user-attachments/assets/31f5e1be-a2c2-41d3-ac8a-b56591261dcc" />
 
 DB
